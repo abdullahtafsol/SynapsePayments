@@ -9,7 +9,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Infrastructure", "Infrastru
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DocuSignHelper", "DocuSignHelper\DocuSignHelper.csproj", "{23CB01BC-589D-457D-B6B2-DC99B8252305}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "API", "API\API.csproj", "{6DA40329-67E4-446E-B23A-212E17134951}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "API", "API\API.csproj", "{6DA40329-67E4-446E-B23A-212E17134951}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

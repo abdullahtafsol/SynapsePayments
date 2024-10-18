@@ -49,5 +49,31 @@ namespace API.Controllers
                 return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
             }
         }
+
+        [HttpGet("redirect")]
+        public IActionResult RedirectAsync([FromQuery(Name = "event")] string eventName)
+        {
+            try
+            {
+                bool isCompleted = eventName == "signing_complete";
+
+                string returnUrl = _configuration["SuccessRedirectUrl"];
+
+                if (isCompleted)
+                {
+                    return Redirect(returnUrl);
+                }
+                else
+                {
+                    returnUrl = _configuration["FailureRedirectUrl"];
+                    return Redirect(returnUrl);
+                }
+            }
+            catch (Exception ex)
+            {
+                _logger.LogError(ex.Message);
+                return StatusCode((int)HttpStatusCode.InternalServerError, ex.Message);
+            }
+        }
     }
 }
